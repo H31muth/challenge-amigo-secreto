@@ -1,20 +1,20 @@
 // arreglo amigos
 let amigos = [];
 function agregarAmigo(){   // función para agregar un amigo
-   // Ingresa el valor del campo de entrada
-   let inputAmigo = document.getElementById('amigo');
-   let nombreAmigo = inputAmigo.value.trim();
+  
+   let inputAmigo = document.getElementById('amigo');   // es una referencia al elemento HTML
+   let nombreAmigo = inputAmigo.value.trim();           // almacena el contenido limpio del campo de entrada como una cadena de string sin espacios en blanco 
 
    console.log(nombreAmigo);
    console.log(amigos.length);
-   
+
    if (nombreAmigo ===''){         // valida que el campo no esté vacío
     alert('Favor, inserte un nombre válido.');
     return;
    }
    
    amigos.push(nombreAmigo);   //Añade el nombre al arreglo amigos
-   
+   console.log(amigos.length); // Muestra la cantidad de amigos en la consola
    inputAmigo.value="";   // limpia la caja de entrada
 
    actualizarListaAmigos();     // se llama a la función para actualizar la lista de amigos
@@ -31,6 +31,8 @@ function actualizarListaAmigos(){    // función para actualizar lista de amigos
 
 }
 function sortearAmigo() {
+   console.log("11111")
+   console.log(amigos.length); // Muestra la cantidad de amigos antes del sorteo
    if (amigos.length === 0) { 				// Verifica si hay amigos en la lista antes de sortear
       
       alert("No hay amigos en la lista para sortear.");
@@ -42,5 +44,17 @@ function sortearAmigo() {
    
    let resultado = document.getElementById("resultado"); 		// Captura el elemento donde se mostrará el resultado
    resultado.innerHTML = `<li>Amigo Secreto: <strong>${amigoSorteado}</strong></li>`;       // Muestra el resultado en la interfaz
+
+   amigos.splice(indiceAleatorio, 1); // Elimina el amigo sorteado del array
+    actualizarListaAmigos(); // Actualiza la lista en la interfaz
+    
+    if (amigos.length === 0) { // Si ya no hay amigos en la lista
+        setTimeout(() => {
+            alert("Ya se sortearon todos los amigos. Se reiniciará la lista.");
+            amigos = []; // Reinicia la lista de amigos
+            actualizarListaAmigos(); // Refresca la lista en la interfaz
+            resultado.innerHTML = ""; // Borra el resultado mostrado
+        }, 500); // Retraso breve para mostrar la alerta antes de reiniciar
+    }
 }
 
