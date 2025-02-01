@@ -30,7 +30,8 @@ function actualizarListaAmigos(){    // función para actualizar lista de amigos
 }
 function sortearAmigo() {
    if (amigos.length === 0) { 				// Verifica si hay amigos en la lista antes de sortear
-       alert("No hay amigos en la lista para sortear.");
+      console.log(amigos.length);
+      alert("No hay amigos en la lista para sortear.");
        return;
    }
    
