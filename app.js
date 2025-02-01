@@ -15,7 +15,7 @@ function agregarAmigo(){   // función para agregar un amigo
    
    inputAmigo.value="";   // limpia la caja de entrada
 
-   actualizarListaAmigos():     // se llama a la función para actualizar la lista de amigos
+   actualizarListaAmigos();     // se llama a la función para actualizar la lista de amigos
 }
 function actualizarListaAmigos(){    // función para actualizar lista de amigos
    let listaAmigo = document.getElementById("listaAmigos");
