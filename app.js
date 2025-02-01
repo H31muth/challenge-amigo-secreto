@@ -6,6 +6,8 @@ function agregarAmigo(){   // función para agregar un amigo
    let nombreAmigo = inputAmigo.value.trim();
 
    console.log(nombreAmigo);
+   console.log(amigos.length);
+   
    if (nombreAmigo ===''){         // valida que el campo no esté vacío
     alert('Favor, inserte un nombre válido.');
     return;
@@ -30,7 +32,7 @@ function actualizarListaAmigos(){    // función para actualizar lista de amigos
 }
 function sortearAmigo() {
    if (amigos.length === 0) { 				// Verifica si hay amigos en la lista antes de sortear
-      console.log(amigos.length);
+      
       alert("No hay amigos en la lista para sortear.");
        return;
    }
