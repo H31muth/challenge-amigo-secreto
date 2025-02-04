@@ -54,7 +54,7 @@ function sortearAmigo() {
             amigos = []; // Reinicia la lista de amigos
             actualizarListaAmigos(); // Refresca la lista en la interfaz
             resultado.innerHTML = ""; // Borra el resultado mostrado
-        }, 1000); // Retraso breve para mostrar la alerta antes de reiniciar
+        }, 500); // Retraso breve para mostrar la alerta antes de reiniciar
     }
 }
 
