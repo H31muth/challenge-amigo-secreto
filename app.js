@@ -1,6 +1,6 @@
-// arreglo amigos
-let amigos = [];
-function agregarAmigo(){   // función para agregar un amigo
+
+let amigos = [];            // arreglo amigos
+function agregarAmigo(){    // función para agregar un amigo
   
    let inputAmigo = document.getElementById('amigo');   // es una referencia al elemento HTML
    let nombreAmigo = inputAmigo.value.trim();           // almacena el contenido limpio del campo de entrada como una cadena de string sin espacios en blanco 
